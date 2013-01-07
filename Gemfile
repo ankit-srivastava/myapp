@@ -5,6 +5,15 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
+group :development, :test do
+  gem 'therubyracer'
+end
+
+group :production do
+  gem 'therubyracer-heroku'
+end
+
 gem 'jquery-rails'
 gem "mongoid", ">= 3.0.15"
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
@@ -22,7 +31,6 @@ gem "better_errors", ">= 0.3.2", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'libv8', '= 3.11.8.3', :platform => :ruby
-gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-sass'       # should be already included
